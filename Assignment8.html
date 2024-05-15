@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment8</title>
+    <style type="text/css">
+        *{
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+            background-color: black;
+        }
+        #SearchBox{
+                width: 90%;
+                height: 50px;
+                border: 2px solid white;
+                display: flex;
+                flex-flow: row nowrap;
+        }
+        #input{
+            width: 80%;
+            border: none;
+            outline: none;
+            padding: 0 15px;
+        }
+        #searchBtn{
+            width: 20%;
+        }
+        input{
+            font-size: 20px;
+        }
+        #content{
+            width: 90%;
+            color: white;
+            font-size: 20px;
+            padding-top: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div id="SearchBox">
+        <input type="text" id="input" placeholder="Search"/>
+        <input type="button" id="searchBtn" value="Search"
+        onclick="search();"/>
+    </div>
+    <div id="content">
+        <P id="p">This is a Text File.
+            <br>
+            Enter any text in the box and you may see the result.
+        </P>
+
+    </div>
+    <script type="text/javascript">
+        const P = document.getElementById("p");
+        function search(){
+            let input= document.getElementById("input").value;
+            if(input != ""){
+                let regExp = new RegExp(input, "gi");
+                p.innerHTML = (p.textContent).replace(regExp, "<mark>$&</mark>");
+            }
+        }
+    </script>
+    
+</body>
+</html>
